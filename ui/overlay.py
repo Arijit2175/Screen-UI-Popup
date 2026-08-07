@@ -1,4 +1,4 @@
-from PySide6.QtWidgets import QWidget, QLabel
+from PySide6.QtWidgets import QWidget, QLabel, QGraphicsOpacityEffect
 from PySide6.QtGui import QPixmap, QGuiApplication
 from PySide6.QtCore import Qt, QPropertyAnimation, QEasingCurve, QPoint
 
@@ -52,7 +52,9 @@ class Overlay(QWidget):
 
         self.bubble.move(130, 150)
 
-        self.bubble.hide()
+        self.bubbleOpacity = QGraphicsOpacityEffect()
+        self.bubble.setGraphicsEffect(self.bubbleOpacity)
+        self.bubbleOpacity.setOpacity(0)
 
         self.greeting = QLabel(
             "What's up,\nArijit!",
@@ -73,13 +75,11 @@ class Overlay(QWidget):
         """)
 
         self.greeting.setGeometry(
-    3,
-    36,
-    190,
-    95
-)
-
-        self.greeting.hide()
+            3,
+            36,
+            190,
+            95
+        )
 
         self.animate_down()
 
@@ -100,5 +100,15 @@ class Overlay(QWidget):
         self.animation.start()
 
     def showGreeting(self):
-        self.bubble.show()
-        self.greeting.show()
+
+        self.bubbleFade = QPropertyAnimation(
+            self.bubbleOpacity,
+            b"opacity"
+        )
+
+        self.bubbleFade.setDuration(500)
+        self.bubbleFade.setStartValue(0)
+        self.bubbleFade.setEndValue(1)
+        self.bubbleFade.setEasingCurve(QEasingCurve.OutQuad)
+
+        self.bubbleFade.start()
