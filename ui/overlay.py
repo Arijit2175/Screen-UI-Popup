@@ -13,12 +13,12 @@ class Overlay(QWidget):
 
         self.setAttribute(Qt.WA_TranslucentBackground)
 
-        self.resize(350, 450)
+        self.resize(520, 450)
 
         screen = QGuiApplication.primaryScreen().availableGeometry()
 
         x = screen.width() - self.width() - 20
-        y = -self.height()           
+        y = -self.height()
 
         self.move(x, y)
 
@@ -35,7 +35,51 @@ class Overlay(QWidget):
             )
         )
 
-        self.spiderman.move(50, 0)
+        self.spiderman.move(250, 0)
+
+        self.bubble = QLabel(self)
+
+        bubble = QPixmap("assets/bubble.png")
+
+        self.bubble.setPixmap(
+            bubble.scaled(
+                260,
+                180,
+                Qt.KeepAspectRatio,
+                Qt.SmoothTransformation
+            )
+        )
+
+        self.bubble.move(130, 150)
+
+        self.bubble.hide()
+
+        self.greeting = QLabel(
+            "What's up,\nArijit!",
+            self.bubble
+        )
+
+        self.greeting.setAlignment(Qt.AlignCenter)
+        self.greeting.setWordWrap(True)
+
+        self.greeting.setStyleSheet("""
+        QLabel{
+            color:white;
+            background:transparent;
+            font-family:"Comic Sans MS";
+            font-size:16px;
+            font-weight:bold;
+        }
+        """)
+
+        self.greeting.setGeometry(
+    3,
+    36,
+    190,
+    95
+)
+
+        self.greeting.hide()
 
         self.animate_down()
 
@@ -51,4 +95,10 @@ class Overlay(QWidget):
         self.animation.setEndValue(QPoint(end_x, end_y))
         self.animation.setEasingCurve(QEasingCurve.OutCubic)
 
+        self.animation.finished.connect(self.showGreeting)
+
         self.animation.start()
+
+    def showGreeting(self):
+        self.bubble.show()
+        self.greeting.show()
