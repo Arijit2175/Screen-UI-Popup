@@ -1,6 +1,12 @@
 from PySide6.QtWidgets import QWidget, QLabel, QGraphicsOpacityEffect
 from PySide6.QtGui import QPixmap, QGuiApplication
-from PySide6.QtCore import Qt, QPropertyAnimation, QEasingCurve, QPoint
+from PySide6.QtCore import (
+    Qt,
+    QPropertyAnimation,
+    QEasingCurve,
+    QPoint,
+    QTimer
+)
 
 class Overlay(QWidget):
     def __init__(self):
@@ -84,12 +90,14 @@ class Overlay(QWidget):
         self.animate_down()
 
     def animate_down(self):
+
         screen = QGuiApplication.primaryScreen().availableGeometry()
 
         end_x = screen.width() - self.width() - 20
         end_y = 20
 
         self.animation = QPropertyAnimation(self, b"pos")
+
         self.animation.setDuration(1200)
         self.animation.setStartValue(self.pos())
         self.animation.setEndValue(QPoint(end_x, end_y))
@@ -112,3 +120,39 @@ class Overlay(QWidget):
         self.bubbleFade.setEasingCurve(QEasingCurve.OutQuad)
 
         self.bubbleFade.start()
+
+        QTimer.singleShot(3000, self.hideGreeting)
+
+    def hideGreeting(self):
+
+        self.bubbleFadeOut = QPropertyAnimation(
+            self.bubbleOpacity,
+            b"opacity"
+        )
+
+        self.bubbleFadeOut.setDuration(500)
+        self.bubbleFadeOut.setStartValue(1)
+        self.bubbleFadeOut.setEndValue(0)
+        self.bubbleFadeOut.setEasingCurve(QEasingCurve.InQuad)
+
+        self.bubbleFadeOut.finished.connect(self.animate_up)
+
+        self.bubbleFadeOut.start()
+
+    def animate_up(self):
+
+        screen = QGuiApplication.primaryScreen().availableGeometry()
+
+        end_x = screen.width() - self.width() - 20
+        end_y = -self.height()
+
+        self.upAnimation = QPropertyAnimation(self, b"pos")
+
+        self.upAnimation.setDuration(1200)
+        self.upAnimation.setStartValue(self.pos())
+        self.upAnimation.setEndValue(QPoint(end_x, end_y))
+        self.upAnimation.setEasingCurve(QEasingCurve.InCubic)
+
+        self.upAnimation.finished.connect(self.close)
+
+        self.upAnimation.start()
