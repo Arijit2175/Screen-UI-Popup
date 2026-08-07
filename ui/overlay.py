@@ -1,7 +1,6 @@
 from PySide6.QtWidgets import QWidget
 from PySide6.QtCore import Qt
 
-
 class Overlay(QWidget):
     def __init__(self):
         super().__init__()
