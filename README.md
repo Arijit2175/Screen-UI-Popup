@@ -58,3 +58,31 @@ ScreenPopup/
 
 ---
 
+## 🎬 How It Works
+
+When Windows starts and the user logs in, Windows Task Scheduler launches the application.
+
+The animation follows this sequence:
+
+```
+Windows Login
+      ↓
+Task Scheduler launches application
+      ↓
+Popup slides down from the top
+      ↓
+Speech bubble fades in
+      ↓
+Personalized greeting is displayed
+      ↓
+Waits for a few seconds
+      ↓
+Speech bubble fades out
+      ↓
+Popup slides back up
+      ↓
+Application closes
+```
+
+---
+
