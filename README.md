@@ -183,3 +183,25 @@ python main.py
 
 ---
 
+## 📦 Building the EXE
+
+Install PyInstaller:
+
+```
+pip install pyinstaller
+```
+
+Build the application:
+
+```
+pyinstaller --onefile --windowed --add-data "assets;assets" main.py
+```
+
+The executable will be created inside:
+
+```
+dist/main.exe
+```
+
+---
+
