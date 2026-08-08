@@ -157,3 +157,29 @@ The greeting can be changed to any custom message.
 
 ---
 
+## 📦 Run the Project
+
+1. Install Python
+
+Check whether Python is installed:
+
+```
+python --version
+```
+
+2. Install PySide6
+
+```
+pip install PySide6
+```
+
+3. Run the application
+
+From the project directory:
+
+```
+python main.py
+```
+
+---
+
