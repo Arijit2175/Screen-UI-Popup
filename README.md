@@ -33,4 +33,28 @@ The popup smoothly appears from the top of the screen, displays a personalized g
 
 ---
 
+## 📁 Project Structure
+
+```
+ScreenPopup/
+│
+├── assets/
+│   ├── popup_image.jpg
+│   └── second_popup_image.png
+│
+├── config.py
+├── main.py
+├── ui/
+    └── overlay.py
+├── resources.py
+│
+├── build/
+├── dist/
+│   └── main.exe
+│
+├── main.spec
+└── README.md
+```
+
+---
 
