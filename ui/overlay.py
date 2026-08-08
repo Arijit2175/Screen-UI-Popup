@@ -1,3 +1,4 @@
+from resources import resource_path
 from PySide6.QtWidgets import QWidget, QLabel, QGraphicsOpacityEffect
 from PySide6.QtGui import QPixmap, QGuiApplication
 from PySide6.QtCore import (
@@ -30,7 +31,7 @@ class Overlay(QWidget):
 
         self.spiderman = QLabel(self)
 
-        pixmap = QPixmap("assets/spidey.jpg")
+        pixmap = QPixmap(resource_path("assets/spidey.jpg"))
 
         self.spiderman.setPixmap(
             pixmap.scaled(
@@ -45,7 +46,7 @@ class Overlay(QWidget):
 
         self.bubble = QLabel(self)
 
-        bubble = QPixmap("assets/bubble.png")
+        bubble = QPixmap(resource_path("assets/bubble.png"))
 
         self.bubble.setPixmap(
             bubble.scaled(

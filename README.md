@@ -1,2 +1,2 @@
-# Screen-UI-Modify
+# Screen-UI-Popup
 A stylish screen logger.
