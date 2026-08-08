@@ -108,3 +108,35 @@ to keep the popup above other windows.
 
 ---
 
+## 🎞️ Animation
+
+The popup uses Qt's property animation system:
+
+```
+QPropertyAnimation
+```
+
+to smoothly move the overlay onto and off the screen.
+
+Easing curves are used to make the movement feel smoother:
+
+```
+QEasingCurve.OutCubic
+```
+
+and:
+
+```
+QEasingCurve.InCubic
+```
+
+The speech bubble uses:
+
+```
+QGraphicsOpacityEffect
+```
+
+to create fade-in and fade-out effects.
+
+---
+
