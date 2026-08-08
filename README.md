@@ -86,3 +86,25 @@ Application closes
 
 ---
 
+## 🖥️ Desktop Overlay
+
+The application uses a transparent and frameless PySide6 window.
+
+This allows the popup to appear directly over the desktop without displaying a traditional application window.
+
+The overlay uses:
+
+```
+Qt.FramelessWindowHint
+```
+
+and:
+
+```
+Qt.WindowStaysOnTopHint
+```
+
+to keep the popup above other windows.
+
+---
+
