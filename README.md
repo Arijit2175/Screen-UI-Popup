@@ -205,3 +205,25 @@ dist/main.exe
 
 ---
 
+## 🔧 Resource Handling
+
+The project uses a resource helper to correctly locate assets when running both from Python and from a PyInstaller executable.
+
+Example:
+
+```
+from resources import resource_path
+```
+
+Assets can then be loaded using:
+
+```
+QPixmap(
+    resource_path("assets/popup_image.jpg")
+)
+```
+
+This ensures that images continue to work after packaging the application as an .exe.
+
+---
+
