@@ -277,3 +277,19 @@ The Task Scheduler entry remains registered so the application can run again at 
 
 ---
 
+## 💾 Performance
+
+The application is designed to have minimal impact on system performance.
+
+It:
+
+Uses minimal CPU while the animation is running
+Uses a small amount of RAM
+Does not continuously run in the background
+Automatically exits after the animation
+Uses lightweight image assets
+
+The application only consumes resources for a short period during startup.
+
+---
+
