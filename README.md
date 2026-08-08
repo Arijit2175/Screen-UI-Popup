@@ -6,4 +6,21 @@ The popup smoothly appears from the top of the screen, displays a personalized g
 
 ---
 
+## ✨ Features
+
+- 🖥️ Animated desktop popup
+- 📍 Appears in the top-right corner of the screen
+- 🪟 Transparent, frameless overlay
+- 💬 Speech bubble with personalized text
+- 🎨 Custom fonts and styling
+- ⬇️ Smooth entrance animation
+- 💨 Fade-in/fade-out effects
+- ⬆️ Smooth exit animation
+- 🚀 Automatically launches when Windows starts
+- ❌ Automatically closes after the animation
+- 📦 Can be packaged as a standalone `.exe`
+- 💾 Does not continuously run in the background
+
+---
+
 
