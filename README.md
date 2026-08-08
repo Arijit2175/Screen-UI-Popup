@@ -307,5 +307,6 @@ Possible future additions:
 🎭 Multiple animation styles
 🔔 Different startup notifications
 
----
+<br>
 
+👨‍💻 **Developed by** - @Arijit2175
