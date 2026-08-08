@@ -227,3 +227,25 @@ This ensures that images continue to work after packaging the application as an 
 
 ---
 
+## 🚀 Windows Startup
+
+The application uses Windows Task Scheduler to launch automatically when the user logs into Windows.
+
+Task Configuration
+
+Task Name:
+ScreenPopup
+
+Trigger:
+At log on
+
+Action:
+Start main.exe
+
+Run:
+Only when user is logged on
+
+This allows the popup to appear automatically without manually running the program.
+
+---
+
