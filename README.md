@@ -293,3 +293,19 @@ The application only consumes resources for a short period during startup.
 
 ---
 
+## 🔮 Future Improvements
+
+Possible future additions:
+
+🔊 Startup sound effects
+🎲 Randomized greetings
+⏰ Time-based greetings
+🎨 Multiple popup themes
+⚙️ Configuration file
+🔧 Settings menu
+🖥️ Multi-monitor support
+🎭 Multiple animation styles
+🔔 Different startup notifications
+
+---
+
