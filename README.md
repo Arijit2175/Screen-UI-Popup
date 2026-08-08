@@ -23,4 +23,14 @@ The popup smoothly appears from the top of the screen, displays a personalized g
 
 ---
 
+## 🛠️ Technologies Used
+
+- **Python**
+- **PySide6**
+- **Qt Animations**
+- **PyInstaller**
+- **Windows Task Scheduler**
+
+---
+
 
