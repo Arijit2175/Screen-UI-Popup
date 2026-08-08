@@ -140,3 +140,20 @@ to create fade-in and fade-out effects.
 
 ---
 
+💬 Personalized Greeting
+
+The text displayed inside the popup can easily be customized.
+
+For example:
+
+```
+self.greeting = QLabel(
+    "What's up,\nUser!",
+    self.bubble
+)
+```
+
+The greeting can be changed to any custom message.
+
+---
+
