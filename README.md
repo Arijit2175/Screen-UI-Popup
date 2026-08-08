@@ -249,3 +249,31 @@ This allows the popup to appear automatically without manually running the progr
 
 ---
 
+## 🧹 Application Lifetime
+
+The application is designed to run only for the duration of the popup animation.
+
+After the animation finishes, the application closes:
+
+```
+self.upAnimation.finished.connect(self.close)
+```
+
+Therefore, it does not continuously run in the background.
+
+```
+Windows Login
+      ↓
+Application starts
+      ↓
+Popup animation
+      ↓
+Application closes
+      ↓
+No background process
+```
+
+The Task Scheduler entry remains registered so the application can run again at the next login.
+
+---
+
